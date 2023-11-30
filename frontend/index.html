@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+
+    <div class="wrapper">
+        <div class="navbar">
+            <div>
+                <a href="#">RESERVATIONS</a>
+                <a href="#menu">MENU</a>
+                <a href="#">DIRECTION</a>
+                <a href="#">EVENTS</a>
+            </div>
+            <div class="social-icons">
+                <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+                <a href="#" target="_blank"><i class="fa fa-instagram"></i></a>
+                <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+                <a href="#" target="_blank"><i class="fa fa-youtube"></i></a>
+            </div>
+        </div>
+        <div>
+            <div class="text">
+                <p class="t">Welcome to</p>
+                <img src="images/logo.png" class="text-image">
+            </div>
+            <hr>
+            <p class="r">RESERVE A TABLE</p>
+            <button class="book-button">Book Now</button>
+        </div>
+    </div>
+
+    <div id="menu">
+        <h2>MENU MANAGEMENT</h2>
+        <div class="menu-one">
+            <div><h3>Add an Item</h3></div>
+            <div class="add">
+            <img src="images/img1.jpg" class="menu-img1">
+            <div class="form-one">
+                <form id="addItemForm">
+                <table>
+                    <tr>
+                    <td><label for="itemName">Name:</label></td>
+                    <td><input type="text" id="itemName" name="itemName" required></td>
+                    </tr>
+        
+                    <tr>
+                    <td><label for="itemDescription">Description:</label></td>
+                    <td><input type="text" id="itemDescription" name="itemDescription" required></td>
+                    </tr>
+        
+                    <tr>
+                    <td><label for="itemIngredients">Ingredients:</label></td>
+                    <td><input type="text" id="itemIngredients" name="itemIngredients" required></td>
+                    </tr>
+        
+                    <tr>
+                    <td><label for="itemPrice">Price:</label></td>
+                    <td><input type="number" id="itemPrice" name="itemPrice" min="0" step="0.01" required></td>
+                    </tr>
+        
+                    <tr>
+                    <td><label for="itemCategory">Category:</label></td>
+                    <td><input type="text" id="itemCategory" name="itemCategory" required></td>
+                    </tr>
+        
+                    <tr>
+                    <td colspan="2"><button type="button" onclick="addItem()">Add Item</button>&nbsp;&nbsp;
+                        <button type="reset">Clear</button></td>
+                    </tr>
+                </table>
+                </form>
+            </div>
+            </div>
+        </div>
+
+        <div class="menu-two">
+            <div><h3>Update an Item</h3></div>
+            <div class="update">
+            <div class="form-two">
+                <form id="updateItemForm">
+                <table>
+                    <tr>
+                        <td><label for="itemId">ID:</label></td>
+                        <td><input type="text" id="itemId" name="itemId" required></td>
+                        </tr>
+                    <tr>
+
+                    <td><label for="itemName2">Name:</label></td>
+                    <td><input type="text" id="itemName2" name="itemName2" required></td>
+                    </tr>
+        
+                    <tr>
+                    <td><label for="itemDescription2">Description:</label></td>
+                    <td><input type="text" id="itemDescription2" name="itemDescription2" required></td>
+                    </tr>
+        
+                    <tr>
+                    <td><label for="itemIngredients2">Ingredients:</label></td>
+                    <td><input type="text" id="itemIngredients2" name="itemIngredients2" required></td>
+                    </tr>
+        
+                    <tr>
+                    <td><label for="itemPrice2">Price:</label></td>
+                    <td><input type="number" id="itemPrice2" name="itemPrice2" min="0" step="0.01" required></td>
+                    </tr>
+        
+                    <tr>
+                    <td><label for="itemCategory2">Category:</label></td>
+                    <td><input type="text" id="itemCategory2" name="itemCategory2" required></td>
+                    </tr>
+        
+                    <tr>
+                    <td colspan="2"><button type="button" onclick="updateItem()">Update Item</button>&nbsp;&nbsp;
+                        <button type="reset">Clear</button></td>
+                    </tr>
+                </table>
+                </form>
+            </div>
+            <img src="images/img2.jpg" class="menu-img2">
+            </div>
+        </div>
+
+        <div class="menu-three">
+            <div><h3>View Items</h3></div>
+            <div class="view">
+            <img src="images/img3.jpg" class="menu-img3">
+            <div class="form-three">
+                <form>
+                <table>
+                    <tr><td colspan="2"><button type="button" onclick="viewAllItems()">View all items</button></td></tr>
+                    <tr><td colspan="2"><hr></td></tr>
+                    <tr>
+                        <td><label for="itemCategory3">Enter Category:</label></td>
+                        <td><input type="text" id="itemCategory3" name="itemCategory3" required></td>
+                    </tr>
+                    <tr><td colspan="2"><button type="button" onclick="viewCategoryItems()">View items by category</button></td></tr>
+                    <tr><td colspan="2"><button type="button" onclick="clear()">Clear</button></td></tr>
+                </table>
+                </form>
+            </div>
+            </div>
+        </div>
+
+        <div class="menu-four">
+            <div><h3>Delete Items</h3></div>
+            <div class="del">
+            <div class="form-four">
+                <form>
+                <table>
+                    <tr>
+                        <td><label for="itemId4">Enter Id:</label></td>
+                        <td><input type="text" id="itemId4" name="itemId4" required></td>
+                    </tr>
+                    <tr><td colspan="2"><button type="button" onclick="delItem()">Delete Item</button>&nbsp;&nbsp;
+                        <button type="reset">Clear</button>
+                    </td></tr>
+                </table>
+                </form>
+            </div>
+            <img src="images/img4.jpg" class="menu-img4">
+            </div>
+        </div>
+
+    </div>
+
+    </div>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
