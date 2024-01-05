@@ -13,10 +13,10 @@
     <div class="wrapper">
         <div class="navbar">
             <div>
-                <a href="#">RESERVATIONS</a>
-                <a href="#menu">MENU</a>
-                <a href="#">DIRECTION</a>
+                <a href="#appointment">RESERVATIONS</a>
+                <a href="menu.html">MENU</a>
                 <a href="#">EVENTS</a>
+                <a href="user.html">LOGIN/SIGNUP</a>
             </div>
             <div class="social-icons">
                 <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
@@ -27,148 +27,68 @@
         </div>
         <div>
             <div class="text">
+                <p id="displayUser"></p>
                 <p class="t">Welcome to</p>
                 <img src="images/logo.png" class="text-image">
             </div>
             <hr>
             <p class="r">RESERVE A TABLE</p>
-            <button class="book-button">Book Now</button>
+            <button class="book-button" onclick="location.href='#appointment'">Book Now</button>
         </div>
     </div>
 
-    <div id="menu">
-        <h2>MENU MANAGEMENT</h2>
-        <div class="menu-one">
-            <div><h3>Add an Item</h3></div>
-            <div class="add">
-            <img src="images/img1.jpg" class="menu-img1">
-            <div class="form-one">
-                <form id="addItemForm">
-                <table>
-                    <tr>
-                    <td><label for="itemName">Name:</label></td>
-                    <td><input type="text" id="itemName" name="itemName" required></td>
-                    </tr>
-        
-                    <tr>
-                    <td><label for="itemDescription">Description:</label></td>
-                    <td><input type="text" id="itemDescription" name="itemDescription" required></td>
-                    </tr>
-        
-                    <tr>
-                    <td><label for="itemIngredients">Ingredients:</label></td>
-                    <td><input type="text" id="itemIngredients" name="itemIngredients" required></td>
-                    </tr>
-        
-                    <tr>
-                    <td><label for="itemPrice">Price:</label></td>
-                    <td><input type="number" id="itemPrice" name="itemPrice" min="0" step="0.01" required></td>
-                    </tr>
-        
-                    <tr>
-                    <td><label for="itemCategory">Category:</label></td>
-                    <td><input type="text" id="itemCategory" name="itemCategory" required></td>
-                    </tr>
-        
-                    <tr>
-                    <td colspan="2"><button type="button" onclick="addItem()">Add Item</button>&nbsp;&nbsp;
-                        <button type="reset">Clear</button></td>
-                    </tr>
-                </table>
-                </form>
-            </div>
-            </div>
-        </div>
 
-        <div class="menu-two">
-            <div><h3>Update an Item</h3></div>
-            <div class="update">
-            <div class="form-two">
-                <form id="updateItemForm">
-                <table>
-                    <tr>
-                        <td><label for="itemId">ID:</label></td>
-                        <td><input type="text" id="itemId" name="itemId" required></td>
-                        </tr>
-                    <tr>
-
-                    <td><label for="itemName2">Name:</label></td>
-                    <td><input type="text" id="itemName2" name="itemName2" required></td>
-                    </tr>
-        
-                    <tr>
-                    <td><label for="itemDescription2">Description:</label></td>
-                    <td><input type="text" id="itemDescription2" name="itemDescription2" required></td>
-                    </tr>
-        
-                    <tr>
-                    <td><label for="itemIngredients2">Ingredients:</label></td>
-                    <td><input type="text" id="itemIngredients2" name="itemIngredients2" required></td>
-                    </tr>
-        
-                    <tr>
-                    <td><label for="itemPrice2">Price:</label></td>
-                    <td><input type="number" id="itemPrice2" name="itemPrice2" min="0" step="0.01" required></td>
-                    </tr>
-        
-                    <tr>
-                    <td><label for="itemCategory2">Category:</label></td>
-                    <td><input type="text" id="itemCategory2" name="itemCategory2" required></td>
-                    </tr>
-        
-                    <tr>
-                    <td colspan="2"><button type="button" onclick="updateItem()">Update Item</button>&nbsp;&nbsp;
-                        <button type="reset">Clear</button></td>
-                    </tr>
-                </table>
-                </form>
-            </div>
-            <img src="images/img2.jpg" class="menu-img2">
-            </div>
-        </div>
-
-        <div class="menu-three">
-            <div><h3>View Items</h3></div>
-            <div class="view">
-            <img src="images/img3.jpg" class="menu-img3">
-            <div class="form-three">
-                <form>
-                <table>
-                    <tr><td colspan="2"><button type="button" onclick="viewAllItems()">View all items</button></td></tr>
-                    <tr><td colspan="2"><hr></td></tr>
-                    <tr>
-                        <td><label for="itemCategory3">Enter Category:</label></td>
-                        <td><input type="text" id="itemCategory3" name="itemCategory3" required></td>
-                    </tr>
-                    <tr><td colspan="2"><button type="button" onclick="viewCategoryItems()">View items by category</button></td></tr>
-                    <tr><td colspan="2"><button type="button" onclick="clear()">Clear</button></td></tr>
-                </table>
-                </form>
-            </div>
-            </div>
-        </div>
-
-        <div class="menu-four">
-            <div><h3>Delete Items</h3></div>
-            <div class="del">
-            <div class="form-four">
+    <div id="appointment">
+        <h2>Reserve your Table</h2>
+        <div class="ap">
+            <img src="images/book.jpg" class="ap-img">
+            <div>
                 <form>
                 <table>
                     <tr>
-                        <td><label for="itemId4">Enter Id:</label></td>
-                        <td><input type="text" id="itemId4" name="itemId4" required></td>
+                        <td><label for="name">Name:</label></td>
+                        <td><input type="text" id="name" name="name" required></td>
                     </tr>
-                    <tr><td colspan="2"><button type="button" onclick="delItem()">Delete Item</button>&nbsp;&nbsp;
-                        <button type="reset">Clear</button>
-                    </td></tr>
+            
+                    <tr>
+                        <td><label for="service">No. of Guests:</label></td>
+                        <td><input type="number" id="number" name="number" required></td>
+                    </tr>
+            
+                    <tr>
+                        <td><label for="date">Date:</label></td>
+                        <td><input type="date" id="date" name="date" required></td>
+                    </tr>
+            
+                    <tr>
+                        <td><label for="time">Time:</label></td>
+                        <td><input type="time" id="time" name="time" required></td>
+                    </tr>
+            
+                    <tr>
+                        <td colspan="2"><button type="button" onclick="bookAppointment()">Book</button>&nbsp;&nbsp;
+                            <button type="reset">Clear</button></td>
+                    </tr>
                 </table>
                 </form>
             </div>
-            <img src="images/img4.jpg" class="menu-img4">
-            </div>
         </div>
 
+        <h2>View / Delete your Reservation</h2>
+        <div class="v">
+            <form>
+            <table>
+                <tr>
+                    <td><label for="name2">Enter Name:</label></td>
+                    <td><input type="text" id="name2" name="name2" required></td>
+                    <td><button type="button" onclick="viewAppointment()">View</button></td>
+                    <td><button type="button" onclick="delAppointment()">Delete</button></td>
+                </tr>
+            </table>
+            </form>
+        </div>
     </div>
+
 
     </div>
 
@@ -176,3 +96,4 @@
     
 </body>
 </html>
+
