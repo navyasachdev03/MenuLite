@@ -1,3 +1,7 @@
+html{
+  scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -70,6 +74,11 @@ body {
     text-decoration: none;
     margin-left: 0.2lvw;
     font-size: 20px;
+}
+
+#displayUser{
+  color: white;
+  font-size: 20px;
 }
 
 .t{
@@ -231,6 +240,64 @@ body {
 #itemContainer li {
     margin-bottom: 5px;
     font-size: 15px;
+}
+
+#appointment h2{
+  color: white;
+  text-align: center;
+  letter-spacing: 0.25em;
+  margin-top: 90px;
+  margin-bottom: 35px;
+}
+
+.ap{
+  display: flex;
+}
+
+.v{
+  margin-left: 450px;
+  margin-bottom: 80px;
+}
+
+.ap-img{
+  height: 280px;
+  width: 280px;
+  margin-left: 200px;
+}
+
+.ap form{
+  margin-left: 100px;
+  margin-top: 30px;
+}
+
+.ap form label, .v form label{
+  color: rgb(226, 226, 226);
+}
+
+.ap table,tr,td, .v table,tr,td{
+  padding: 6px;
+}
+
+.ap input, .ap select, .v input{
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.ap button, .v button{
+  background-color: transparent;
+  border: 1px solid rgb(226, 226, 226);
+  color: rgb(226, 226, 226);
+  padding: 5px 10px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.ap button:hover, .v button:hover{
+  cursor: pointer;
+  transform: scale(1.02);
 }
 
 
