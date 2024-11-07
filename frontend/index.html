@@ -1,99 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Document</title>
+    <title>MenuLite</title>
 </head>
+
 <body>
     <div class="container">
 
-    <div class="wrapper">
-        <div class="navbar">
-            <div>
-                <a href="#appointment">RESERVATIONS</a>
-                <a href="menu.html">MENU</a>
-                <a href="#">EVENTS</a>
-                <a href="user.html">LOGIN/SIGNUP</a>
+        <div class="wrapper">
+            <div class="navbar">
+                <div>
+                    <a href="#appointment">RESERVATIONS</a>
+                    <a href="menu.html">MENU</a>
+                    <a href="#">EVENTS</a>
+                    <a href="user.html">ACCOUNT</a>
+                </div>
+                <div class="social-icons">
+                    <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+                    <a href="#" target="_blank"><i class="fa fa-instagram"></i></a>
+                    <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+                    <a href="#" target="_blank"><i class="fa fa-youtube"></i></a>
+                </div>
             </div>
-            <div class="social-icons">
-                <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
-                <a href="#" target="_blank"><i class="fa fa-instagram"></i></a>
-                <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
-                <a href="#" target="_blank"><i class="fa fa-youtube"></i></a>
+            <div>
+                <div class="text">
+                    <p id="displayUser"></p>
+                    <p class="t">Welcome to</p>
+                    <img src="images/logo.png" class="text-image">
+                </div>
+                <hr>
+                <p class="r">RESERVE A TABLE</p>
+                <button class="book-button" onclick="location.href='#appointment'">Book Now</button>
             </div>
         </div>
-        <div>
-            <div class="text">
-                <p id="displayUser"></p>
-                <p class="t">Welcome to</p>
-                <img src="images/logo.png" class="text-image">
+
+
+        <div id="appointment">
+            <h2>Reserve your Table</h2>
+            <div class="ap">
+                <img src="images/book.jpg" class="ap-img">
+                <div>
+                    <form>
+                        <table>
+                            <tr>
+                                <td><label for="name">Name:</label></td>
+                                <td><input type="text" id="name" name="name" required></td>
+                            </tr>
+
+                            <tr>
+                                <td><label for="service">No. of Guests:</label></td>
+                                <td><input type="number" id="number" name="number" required></td>
+                            </tr>
+
+                            <tr>
+                                <td><label for="date">Date:</label></td>
+                                <td><input type="date" id="date" name="date" required></td>
+                            </tr>
+
+                            <tr>
+                                <td><label for="time">Time:</label></td>
+                                <td><input type="time" id="time" name="time" required></td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="2"><button type="button"
+                                        onclick="bookAppointment()">Book</button>&nbsp;&nbsp;
+                                    <button type="reset">Clear</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
             </div>
-            <hr>
-            <p class="r">RESERVE A TABLE</p>
-            <button class="book-button" onclick="location.href='#appointment'">Book Now</button>
-        </div>
-    </div>
 
-
-    <div id="appointment">
-        <h2>Reserve your Table</h2>
-        <div class="ap">
-            <img src="images/book.jpg" class="ap-img">
-            <div>
+            <h2>View / Delete your Reservation</h2>
+            <div class="v">
                 <form>
-                <table>
-                    <tr>
-                        <td><label for="name">Name:</label></td>
-                        <td><input type="text" id="name" name="name" required></td>
-                    </tr>
-            
-                    <tr>
-                        <td><label for="service">No. of Guests:</label></td>
-                        <td><input type="number" id="number" name="number" required></td>
-                    </tr>
-            
-                    <tr>
-                        <td><label for="date">Date:</label></td>
-                        <td><input type="date" id="date" name="date" required></td>
-                    </tr>
-            
-                    <tr>
-                        <td><label for="time">Time:</label></td>
-                        <td><input type="time" id="time" name="time" required></td>
-                    </tr>
-            
-                    <tr>
-                        <td colspan="2"><button type="button" onclick="bookAppointment()">Book</button>&nbsp;&nbsp;
-                            <button type="reset">Clear</button></td>
-                    </tr>
-                </table>
+                    <table>
+                        <tr>
+                            <td><label for="name2">Enter Name:</label></td>
+                            <td><input type="text" id="name2" name="name2" required></td>
+                        </tr>
+                        <tr>
+                            <td><button type="button" onclick="viewAppointment()">View</button></td>
+                            <td><button type="button" onclick="delAppointment()">Delete</button></td>
+                        </tr>
+                    </table>
                 </form>
             </div>
         </div>
 
-        <h2>View / Delete your Reservation</h2>
-        <div class="v">
-            <form>
-            <table>
-                <tr>
-                    <td><label for="name2">Enter Name:</label></td>
-                    <td><input type="text" id="name2" name="name2" required></td>
-                    <td><button type="button" onclick="viewAppointment()">View</button></td>
-                    <td><button type="button" onclick="delAppointment()">Delete</button></td>
-                </tr>
-            </table>
-            </form>
-        </div>
-    </div>
-
 
     </div>
 
+    <script src="config.js"></script>
     <script src="script.js"></script>
-    
-</body>
-</html>
 
+
+</body>
+
+</html>

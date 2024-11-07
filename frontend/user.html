@@ -1,183 +1,76 @@
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: black;
-        }
-
-        .flip-container{
-            display: flex;
-        }
-
-        .hidden{
-            display: none;
-        }
-
-        h2{
-            color: white;
-            text-align: center;
-            letter-spacing: 0.25em;
-            margin-top: 50px;
-        }
-
-        .flip-container h3{
-            font-style: italic;
-            color: rgb(238, 238, 238);
-            letter-spacing: 0.2em;
-            margin-top: 50px;
-            text-align: center;
-            text-decoration: underline;
-        }
-
-        form{
-            margin-left: 150px;
-        }
-
-        .user-img{
-            height: 280px;
-            width: 280px;
-            margin-left: 200px;
-            margin-top: 60px;
-        }
-
-        form label{
-            color: rgb(226, 226, 226);
-        }
-
-        table,tr,td{
-            padding: 6px;
-        }
-
-        input{
-            padding: 5px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-
-        .btn{
-            background-color: transparent;
-            border: 1px solid rgb(226, 226, 226);
-            color: rgb(226, 226, 226);
-            padding: 5px 10px;
-            border-radius: 7px;
-            cursor: pointer;
-            font-size: 16px;
-            width: 100%;
-        }
-
-        .btn:hover{
-            cursor: pointer;
-            transform: scale(1.02);
-        }
-
-        .btn2{
-            font-size: 15px;
-            background-color: transparent;
-            border: none;
-            color: white;
-        }
-
-        .btn2:hover{
-            cursor: pointer;
-            text-decoration: underline;
-        }
-
-        hr{
-            color: rgb(190, 190, 190);
-            border: 1px solid rgb(190, 190, 190);
-        }
-
-        a{
-            float: left;
-            font-size: 16px;
-            color: whitesmoke;
-            text-decoration: underline;
-            margin-left: 10px;
-        }
-
-        a:hover{
-            cursor: pointer;
-            transform: scale(1.05);
-        }
-
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <title>User Authentication</title>
 </head>
+
 <body>
 
-    <a href="index.html">Back to Home</a>
-    <h2>USER AUTHENTICATION</h2>
+    <div id="user">
+        <a class="back-to-home" href="index.html">Back to Home</a>
+        <div>
 
-    <div class="flip-container">
-        <img src="images/user.jpeg" class="user-img">
-        <div class="flipper">
-            <div id="registrationForm" class="hidden">
-                <h3>Register</h3>
-                <form>
-                    <table>
-                        <tr>
-                        <td><label for="name">Name:</label></td>
-                        <td><input type="text" id="name" name="name" required></td>
-                        </tr>
-                    
-                        <tr>
-                        <td><label for="mail">Email:</label></td>
-                        <td><input type="email" id="mail" name="mail" required></td>
-                        </tr>
-                    
-                        <tr>
-                        <td><label for="contact">Contact:</label></td>
-                        <td><input type="text" id="contact" name="contact" required></td>
-                        </tr>
-                    
-                        <tr>
-                        <td><label for="pwd">Password:</label></td>
-                        <td><input type="password" id="pwd" name="pwd" required></td>
-                        </tr>
-                    
-                        <tr>
-                        <td colspan="2"><button type="button" onclick="registerUser()" class="btn">Register</button></td>
-                        </tr>
-                        
-                        <tr><td colspan="2"><button onclick="flipForms()" class="btn2">Already have an account?</button></td></tr>
-                        
-                    </table>
-                </form>
-            </div>
+            <h2>USER AUTHENTICATION</h2>
 
-            <div id="loginForm" class="visible">
-                <h3>Login</h3>
-                <form>
-                    <table>
-                        <tr>
-                        <td><label for="loginMail">Email:</label></td>
-                        <td><input type="email" id="loginMail" name="loginMail" required></td>
-                        </tr>
-                    
-                        <tr>
-                        <td><label for="loginPwd">Password:</label></td>
-                        <td><input type="password" id="loginPwd" name="loginPwd" required></td>
-                        </tr>
-                    
-                        <tr>
-                        <td colspan="2"><button type="button" onclick="loginUser()" class="btn">Login</button></td>
-                        </tr>
+            <div class="flip-container">
+                <img src="images/user.jpeg" alt="User Image" class="user-img">
 
-                        <tr><td colspan="2"><button onclick="flipForms()" class="btn2">Don't have an account?</button></td></tr>
-                        <tr><td colspan="2"><hr></td></tr>
-                        <td colspan="2"><button type="button" onclick="logout()" class="btn">Logout</button></td>
-                        
-                    </table>
-                </form>
+                <div class="flipper">
+                    <div id="registrationForm" class="hidden">
+                        <h3>Register</h3>
+                        <form>
+                            <table>
+                                <tr>
+                                    <td><label for="name">Name:</label></td>
+                                    <td><input type="text" id="name" name="name" required></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="mail">Email:</label></td>
+                                    <td><input type="email" id="mail" name="mail" required></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="contact">Contact:</label></td>
+                                    <td><input type="text" id="contact" name="contact" required></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="pwd">Password:</label></td>
+                                    <td><input type="password" id="pwd" name="pwd" required></td>
+                                </tr>
+                            </table>
+
+                            <button type="button" onclick="registerUser()" class="btn">Register</button>
+                            <button type="button" onclick="flipForms()" class="btn2">Already have an account?</button>
+                        </form>
+                    </div>
+
+                    <div id="loginForm" class="visible">
+                        <h3>Login</h3>
+                        <form>
+                            <table>
+                                <tr>
+                                    <td><label for="loginMail">Email:</label></td>
+                                    <td><input type="email" id="loginMail" name="loginMail" required></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="loginPwd">Password:</label></td>
+                                    <td><input type="password" id="loginPwd" name="loginPwd" required></td>
+                                </tr>
+
+                            </table>
+                            <button type="button" onclick="loginUser()" class="btn">Login</button>
+                            <button type="button" onclick="flipForms()" class="btn2">Don't have an account?</button>
+                            <hr>
+                            <button type="button" onclick="logout()" class="btn">Logout</button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-
-    <script src="script.js"></script>
 
     <script>
         function flipForms() {
@@ -186,13 +79,15 @@
 
             registrationForm.classList.toggle('hidden');
             registrationForm.classList.toggle('visible');
-    
+
             loginForm.classList.toggle('hidden');
             loginForm.classList.toggle('visible');
         }
     </script>
 
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+
 </body>
+
 </html>
-
-

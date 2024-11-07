@@ -1,13 +1,19 @@
+const dotenv = require('dotenv')
 const express = require('express')
 const app = express()
-const host = 3000 
 const mongoose = require('mongoose')
 app.use(express.json()) 
+
+dotenv.config({
+    path: "./.env",
+});  
 
 const cors = require('cors') 
 app.use(cors())
 
-mongoose.connect('mongodb://127.0.0.1:27017/MenuLite');
+const PORT=process.env.PORT;
+
+mongoose.connect(`${process.env.MONGO_URI}/MenuLite`);
 const db = mongoose.connection;
 db.once('open',()=>{ 
     console.log("DB Connected...")
@@ -36,7 +42,6 @@ const Appointment = mongoose.model('Appointment', {
     date: Date,
     time: String,
 })
-
 
 app.post('/register',async(req,res)=>{
 
@@ -268,6 +273,6 @@ app.delete('/delete-appointment/:name',async(req,res)=>{
 
 
 
-app.listen(host,()=>{
+app.listen(PORT,()=>{
     console.log("server started...")
 })

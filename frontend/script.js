@@ -15,7 +15,7 @@ async function registerUser() {
 
     const data = JSON.stringify(newUser);
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'http://localhost:3000/register');
+    xhr.open('POST', `${apiUrl}/register`);
     xhr.setRequestHeader('Content-Type', 'application/json');
 
     xhr.onload = function () {
@@ -62,7 +62,7 @@ async function loginUser() {
 
     const data = JSON.stringify(loginUser);
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'http://localhost:3000/login');
+    xhr.open('POST', `${apiUrl}/login`);
     xhr.setRequestHeader('Content-Type', 'application/json');
 
     xhr.onload = function () {
@@ -141,7 +141,7 @@ function addItem() {
 
         const data = JSON.stringify(newItem);
         var xhr = new XMLHttpRequest();
-        xhr.open('POST', 'http://localhost:3000/addItem');
+        xhr.open('POST', `${apiUrl}/addItem`);
         xhr.setRequestHeader('Content-Type', 'application/json');
 
         xhr.onload = function () {
@@ -183,7 +183,7 @@ function updateItem() {
 
     const data = JSON.stringify(updatedItem);
     var xhr = new XMLHttpRequest();
-    xhr.open('PUT', `http://localhost:3000/updateItem/${itemSerialNo}`);
+    xhr.open('PUT', `${apiUrl}/updateItem/${itemSerialNo}`);
     xhr.setRequestHeader('Content-Type', 'application/json');
 
     xhr.onload = function () {
@@ -211,30 +211,35 @@ function displayItems(items) {
     const itemContainer = document.getElementById('itemContainer') || document.createElement('div');
     itemContainer.id = 'itemContainer';
 
-    itemContainer.innerHTML = '';
-    const itemList = document.createElement('ul');
-
-    items.forEach(item => {
-        const listItem = document.createElement('li');
-        const nestedList = document.createElement('ul');
-
-        const fieldsToDisplay = ['serialNo', 'name', 'description', 'ingredients', 'price', 'category'];
-
-        fieldsToDisplay.forEach(field => {
-            const nestedItem = document.createElement('li');
-            nestedItem.textContent = `${field}: ${item[field] || ''}`;
-            nestedList.appendChild(nestedItem);
+    if(items.length!=0){
+        itemContainer.innerHTML = '';
+        const itemList = document.createElement('ul');
+    
+        items.forEach(item => {
+            const listItem = document.createElement('li');
+            const nestedList = document.createElement('ul');
+    
+            const fieldsToDisplay = ['serialNo', 'name', 'description', 'ingredients', 'price', 'category'];
+    
+            fieldsToDisplay.forEach(field => {
+                const nestedItem = document.createElement('li');
+                nestedItem.textContent = `${field}: ${item[field] || ''}`;
+                nestedList.appendChild(nestedItem);
+            });
+    
+            listItem.appendChild(nestedList);
+            itemList.appendChild(listItem);
         });
-
-        listItem.appendChild(nestedList);
-        itemList.appendChild(listItem);
-    });
-
-    itemContainer.appendChild(itemList);
-
-    if (!document.getElementById('itemContainer')) {
-        document.body.appendChild(itemContainer);
+    
+        itemContainer.appendChild(itemList);
+    
+        if (!document.getElementById('itemContainer')) {
+            document.body.appendChild(itemContainer);
+        }
+    } else{
+        itemContainer.innerHTML = 'No menu items to show';
     }
+
 }
 
 
@@ -243,7 +248,7 @@ function displayItems(items) {
 function viewAllItems() {
 
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'http://localhost:3000/getAllItems');
+    xhr.open('GET', `${apiUrl}/getAllItems`);
     xhr.setRequestHeader('Content-Type', 'application/json');
 
     xhr.onload = function () {
@@ -273,7 +278,7 @@ function viewCategoryItems() {
     const category = document.getElementById('itemCategory3').value;
 
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', `http://localhost:3000/getItem/${category}`);
+    xhr.open('GET', `${apiUrl}/getItem/${category}`);
     xhr.setRequestHeader('Content-Type', 'application/json');
 
     xhr.onload = function () {
@@ -303,7 +308,7 @@ function delItem() {
     const itemSerialNo = document.getElementById('itemSerialNo4').value;
 
     const xhr = new XMLHttpRequest();
-    xhr.open('DELETE', `http://localhost:3000/deleteItem/${itemSerialNo}`);
+    xhr.open('DELETE', `${apiUrl}/deleteItem/${itemSerialNo}`);
     xhr.setRequestHeader('Content-Type', 'application/json');
 
     xhr.onload = function () {
@@ -343,7 +348,7 @@ async function bookAppointment() {
 
     const data = JSON.stringify(newAppointment);
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'http://localhost:3000/book-appointment');
+    xhr.open('POST', `${apiUrl}/book-appointment`);
     xhr.setRequestHeader('Content-Type', 'application/json');
 
     xhr.onload = function () {
@@ -379,7 +384,7 @@ async function viewAppointment() {
     const userName = document.getElementById('name2').value;
 
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', `http://localhost:3000/view-appointment/${userName}`);
+    xhr.open('GET', `${apiUrl}/view-appointment/${userName}`);
     xhr.setRequestHeader('Content-Type', 'application/json');
 
     xhr.onload = function () {
@@ -415,7 +420,7 @@ async function delAppointment() {
     const userName = document.getElementById('name2').value;
 
     const xhr = new XMLHttpRequest();
-    xhr.open('DELETE', `http://localhost:3000/delete-appointment/${userName}`);
+    xhr.open('DELETE', `${apiUrl}/delete-appointment/${userName}`);
     xhr.setRequestHeader('Content-Type', 'application/json');
 
     xhr.onload = function () {
