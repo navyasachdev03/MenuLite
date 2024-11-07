@@ -9,7 +9,12 @@ dotenv.config({
 });  
 
 const cors = require('cors') 
-app.use(cors())
+
+const corsConfig = {
+    credentials: true,
+    origin: true,
+  };
+app.use(cors(corsConfig))
 
 const PORT=process.env.PORT;
 
