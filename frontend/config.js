@@ -1,0 +1,1 @@
+window.apiUrl = 'https://menulite.onrender.com';
