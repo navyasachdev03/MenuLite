@@ -64,7 +64,6 @@ const Account = ({ onLoginUser, onLoginStaff }) => {
                 mail: formData.email,
                 pwd: formData.password,
             }),
-            credentials: "include",
         })
             .then((response) => response.json())
             .then((data) => {
@@ -89,7 +88,6 @@ const Account = ({ onLoginUser, onLoginStaff }) => {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({ mail: formData.email, pwd: formData.password }),
-            credentials: "include",
         })
             .then((response) => response.json())
             .then((data) => {

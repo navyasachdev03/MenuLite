@@ -2,11 +2,12 @@ const express = require('express');
 const { addItem, getAllItems, getItemByCategory, updateItem, deleteItem } = require('../controllers/item.controller');
 const router = express.Router();
 const upload = require('../middlewares/multer.middleware');
+const allowCors = require('../middlewares/cors.middleware');
 
-router.post('/', upload.array("images"), addItem);
-router.get('/', getAllItems);
-router.get('/:category', getItemByCategory);
-router.put('/:itemId', upload.array("images"), updateItem);
-router.delete('/:itemId', deleteItem);
+router.post('/', allowCors, upload.array("images"), addItem);
+router.get('/', allowCors, getAllItems);
+router.get('/:category', allowCors, getItemByCategory);
+router.put('/:itemId', allowCors, upload.array("images"), updateItem);
+router.delete('/:itemId', allowCors, deleteItem);
 
 module.exports = router;

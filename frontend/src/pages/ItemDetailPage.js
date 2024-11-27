@@ -79,7 +79,6 @@ const ItemDetailPage = () => {
         try {
             const response = await fetch(`${API_BASE_URL}item/${item._id}`, {
                 method: 'DELETE',
-                credentials: 'include',
             });
 
             if (response.ok) {

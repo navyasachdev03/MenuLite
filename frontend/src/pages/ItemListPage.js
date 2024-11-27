@@ -25,7 +25,6 @@ const ItemListPage = () => {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                credentials: 'include',
             })
                 .then((response) => response.json())
                 .then((data) => {
@@ -85,7 +84,6 @@ const ItemListPage = () => {
             await fetch(`${API_BASE_URL}item/`, {
                 method: 'POST',
                 body: formDataToSend,
-                credentials: 'include',
             })
                 .then(response => response.json())
                 .then(data => {

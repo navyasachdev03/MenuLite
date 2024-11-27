@@ -13,7 +13,6 @@ const Navbar = ({ setSearchTerm }) => {
           "Content-Type": "application/json",
         },
         method: 'POST',
-        credentials: 'include',
       });
 
       if (response.ok) {
