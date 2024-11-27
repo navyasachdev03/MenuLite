@@ -122,7 +122,7 @@ const ItemListPage = () => {
                     />
                 </div>
             ) : filteredItems.length === 0 ? (
-                <div className="text-center justify-center items-center flex flex-col min-h-screen">
+                <div className="text-center items-center flex flex-col min-h-screen">
                     <h2 className="text-4xl font-semibold mb-4">No Items to Show!</h2>
                     <button
                         onClick={handleAddItem}

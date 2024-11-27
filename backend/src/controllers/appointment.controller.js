@@ -10,12 +10,12 @@ const bookAppointment = async (req, res) => {
         const maxAppointments = 5;
 
         if (existingAppointment >= maxAppointments) {
-            return res.status(409).json({ msg: "Time slot not available" });
+            return res.status(409).json({ statusCode:409, msg: "Time slot not available" });
         }
 
         const newAppointment = new Appointment(req.body);
         const savedAppointment = await newAppointment.save();
-        res.status(201).json(savedAppointment);
+        res.status(201).json({statusCode: 201, appointment: savedAppointment, msg: 'Appointment booked successfully'});
     } catch (error) {
         res.json(error);
     }
@@ -23,10 +23,10 @@ const bookAppointment = async (req, res) => {
 
 const viewAppointment = async (req, res) => {
     try {
-        const bookedUser = await Appointment.findOne({ name: req.params.name });
+        const bookedUser = await Appointment.findOne({ email: req.params.email });
 
         if (bookedUser) {
-            return res.json(bookedUser);
+            return res.status(200).json({statusCode: 200, bookedAppointment: bookedUser});
         }
 
         return res.status(404).json({ msg: "No appointment found" });
@@ -37,10 +37,10 @@ const viewAppointment = async (req, res) => {
 
 const deleteAppointment = async (req, res) => {
     try {
-        const deletedAppointment = await Appointment.findOneAndDelete({ name: req.params.name });
+        const deletedAppointment = await Appointment.findOneAndDelete({ email: req.params.email });
 
         if (deletedAppointment) {
-            return res.json({ msg: "Appointment deleted" });
+            return res.status(200).json({ statusCode: 200, msg: "Appointment deleted" });
         }
 
         return res.status(404).json({ msg: "No appointment found" });

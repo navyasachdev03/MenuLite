@@ -4,7 +4,7 @@ const router = express.Router();
 const allowCors = require('../middlewares/cors.middleware');
 
 router.post('/book', allowCors, bookAppointment);
-router.get('/view/:name', allowCors, viewAppointment);
-router.delete('/delete/:name', allowCors, deleteAppointment);
+router.get('/view/:email', allowCors, viewAppointment);
+router.delete('/delete/:email', allowCors, deleteAppointment);
 
 module.exports = router;

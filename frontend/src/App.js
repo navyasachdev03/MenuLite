@@ -3,6 +3,8 @@ import Account from './pages/Account';
 import ItemListPage from './pages/ItemListPage';
 import ItemDetailPage from './pages/ItemDetailPage';
 import Home from './pages/Home';
+import UserHome from './pages/UserHome';
+import BookPage from './pages/BookPage';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 
 function App() {
@@ -32,6 +34,8 @@ function App() {
           <Route path="/account" element={<Account onLoginUser={handleLoginUser} onLoginStaff={handleLoginStaff} />} />
           <Route path="/staff-home" element={<ItemListPage />} />
           <Route path="/details" element={<ItemDetailPage />} />
+          <Route path="/user-home" element={<UserHome />} />
+          <Route path="/book" element={<BookPage />} />
         </Routes>
       </div>
     </div>
