@@ -76,7 +76,7 @@ Create a .env file inside the backend directory with the following variables:
 
 ```plaintext
 MONGODB_URI=your_mongodb_uri                      # The MongoDB connection string
-PORT=3000                                         # The port on which the backend server will run
+PORT=8000                                         # The port on which the backend server will run
 CLOUDINARY_CLOUD_NAME=your_cloudinary_name        # Cloudinary cloud name
 CLOUDINARY_CLOUD_KEY=your_cloudinary_key          # Cloudinary API key
 CLOUDINARY_CLOUD_SECRET=your_cloudinary_secret    # Cloudinary API secret
@@ -95,7 +95,7 @@ REACT_APP_BACKEND_URL=your_backend_url         # Url on which backend server wil
 ```
 
 > [!NOTE]
-> If running on localhost, set the backend url as http://localhost:3000
+> If running on localhost, set the backend url as http://localhost:8000
 
 ## Folder Structure
 
